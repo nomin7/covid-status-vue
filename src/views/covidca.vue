@@ -18,10 +18,11 @@
 
         <div class="row">
             <div class="card border-danger text-danger bg-dark m-3 col md-6" >
-                <div class="card-header">Muertes</div>
+                <div class="card-header"><font-awesome-icon icon="skull-crossbones"/> Muertes</div>
                 <div class="card-body row">
                     <div class="col sm-4">
                         <h5 class="card-title">Total</h5>
+                        <p class="card-text" v-if="seleccion == 'CENTRO AMERICA'">{{es.deaths + cr.deaths + ni.deaths + hn.deaths + gt.deaths + pn.deaths + bl.deaths}}</p>
                         <p class="card-text" v-if="seleccion == 'El Salvador'">{{es.deaths}}</p>
                         <p class="card-text" v-if="seleccion == 'Costa Rica'">{{cr.deaths}}</p>
                         <p class="card-text" v-if="seleccion == 'Nicaragua'">{{ni.deaths}}</p>
@@ -32,6 +33,7 @@
                     </div>
                     <div class="col sm-4">
                         <h5 class="card-title">Hoy</h5>
+                        <p class="card-text" v-if="seleccion == 'CENTRO AMERICA'">{{es.todayDeaths + cr.todayDeaths + ni.todayDeaths + hn.todayDeaths + gt.todayDeaths + pn.todayDeaths + bl.todayDeaths}} <span class="badge badge-secondary">Nuevo</span></p>
                         <p class="card-text" v-if="seleccion == 'El Salvador'">{{es.todayDeaths}} <span class="badge badge-secondary">Nuevo</span></p>
                         <p class="card-text" v-if="seleccion == 'Costa Rica'">{{cr.todayDeaths}} <span class="badge badge-secondary">Nuevo</span></p>
                         <p class="card-text" v-if="seleccion == 'Nicaragua'">{{ni.todayDeaths}} <span class="badge badge-secondary">Nuevo</span></p>
@@ -49,6 +51,7 @@
                  <div class="card-body row">
                     <div class="col sm-6">
                         <h5 class="card-title">Total</h5>
+                        <p class="card-text" v-if="seleccion == 'CENTRO AMERICA'">{{es.cases + cr.cases + ni.cases + hn.cases + gt.cases + pn.cases + bl.cases}}</p>
                         <p class="card-text" v-if="seleccion == 'El Salvador'">{{es.cases}}</p>
                         <p class="card-text" v-if="seleccion == 'Costa Rica'">{{cr.cases}}</p>
                         <p class="card-text" v-if="seleccion == 'Nicaragua'">{{ni.cases}}</p>
@@ -59,6 +62,7 @@
                     </div>
                     <div class="col sm-6">
                         <h5 class="card-title">Activos</h5>
+                        <p class="card-text" v-if="seleccion == 'CENTRO AMERICA'">{{es.active + cr.active + ni.active + hn.active + gt.active + pn.active + bl.active}}</p>
                         <p class="card-text" v-if="seleccion == 'El Salvador'">{{es.active}}</p>
                         <p class="card-text" v-if="seleccion == 'Costa Rica'">{{cr.active}}</p>
                         <p class="card-text" v-if="seleccion == 'Nicaragua'">{{ni.active}}</p>
@@ -71,6 +75,7 @@
 
                     <div class="col sm-4">
                         <h5 class="card-title">Hoy</h5>
+                        <p class="card-text" v-if="seleccion == 'CENTRO AMERICA'">{{es.todayCases + cr.todayCases + ni.todayCases + hn.todayCases + gt.todayCases + pn.todayCases + bl.todayCases}} <span class="badge badge-secondary">Nuevo</span></p>
                         <p class="card-text" v-if="seleccion == 'El Salvador'">{{es.todayCases}} <span class="badge badge-secondary">Nuevo</span></p>
                         <p class="card-text" v-if="seleccion == 'Costa Rica'">{{cr.todayCases}} <span class="badge badge-secondary">Nuevo</span></p>
                         <p class="card-text" v-if="seleccion == 'Nicaragua'">{{ni.todayCases}} <span class="badge badge-secondary">Nuevo</span></p>
@@ -87,6 +92,7 @@
                 <div class="card-header">Criticos</div>
                 <div class="card-body">
                 <h5 class="card-title">Todos</h5>
+                <p class="card-text" v-if="seleccion == 'CENTRO AMERICA'">{{es.critical + cr.critical + ni.critical + hn.critical + gt.critical + pn.critical + bl.critical}}</p>
                 <p class="card-text" v-if="seleccion == 'El Salvador'">{{es.critical}}</p>
                 <p class="card-text" v-if="seleccion == 'Costa Rica'">{{cr.critical}}</p>
                 <p class="card-text" v-if="seleccion == 'Nicaragua'">{{ni.critical}}</p>
@@ -101,6 +107,7 @@
                 <div class="card-header">Recuperados</div>
                 <div class="card-body">
                 <h5 class="card-title">Todos</h5>
+                <p id="m-es" class="card-text" v-if="seleccion == 'CENTRO AMERICA'">{{es.recovered + cr.recovered + ni.recovered + hn.recovered + gt.recovered + pn.recovered + bl.recovered}}</p>
                 <p class="card-text" v-if="seleccion == 'El Salvador'">{{es.recovered}}</p>
                 <p class="card-text" v-if="seleccion == 'Costa Rica'">{{cr.recovered}}</p>
                 <p class="card-text" v-if="seleccion == 'Nicaragua'">{{ni.recovered}}</p>
@@ -110,13 +117,14 @@
                 <p class="card-text" v-if="seleccion == 'Belice'">{{bl.recovered}}</p>
                 </div>
             </div>
-
         </div>
         </center>
     </div>  
 </template>
 
 <script>
+import { faChessQueen } from '@fortawesome/free-solid-svg-icons'
+import  Bar  from 'vue-chartjs'
 import axios from 'axios'
 export default {
     data() {
@@ -237,5 +245,6 @@ export default {
         },
 
     },
+    
 }
 </script>

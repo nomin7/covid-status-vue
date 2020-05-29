@@ -16,6 +16,11 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "about" */ '../views/covidca.vue')
   },
   {
+    path: '/covid',
+    name: 'Covid',
+    component: () => import(/* webpackChunkName: "about" */ '../views/covid.vue')
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting
