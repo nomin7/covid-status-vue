@@ -8,7 +8,10 @@ import VueAxios from 'vue-axios'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import Chartkick from 'vue-chartkick'
+import Chart from 'chart.js'
 
+Vue.use(Chartkick.use(Chart))
 
 
 // Install BootstrapVue
