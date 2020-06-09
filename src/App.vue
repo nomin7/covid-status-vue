@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/covid-ca">Centro America</router-link> |
-      <router-link to="/covid">Covid Mundial</router-link>
+      <router-link to="/">Covid Mundial</router-link>
     </div>
     <router-view/>
   </div>

@@ -5,21 +5,22 @@ import Home from '../views/Home.vue'
 Vue.use(VueRouter)
 
   const routes = [
+  // {
+  //   path: '/',
+  //   name: 'Home',
+  //   component: Home
+  // },
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Covid',
+    component: () => import(/* webpackChunkName: "about" */ '../views/covid.vue')
   },
   {
     path: '/covid-ca',
     name: 'Covidca',
     component: () => import(/* webpackChunkName: "about" */ '../views/covidca.vue')
   },
-  {
-    path: '/covid',
-    name: 'Covid',
-    component: () => import(/* webpackChunkName: "about" */ '../views/covid.vue')
-  },
+  
   {
     path: '/about',
     name: 'About',

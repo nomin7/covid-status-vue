@@ -67,7 +67,7 @@
               <i class="fas fa-exclamation-triangle"></i> Criticos
             </div>
             <div class="card-body">
-              <h5 class="card-title">Todos</h5>
+              <h5 class="card-title">Total</h5>
               <p class="card-text">{{seleccion.criticos}}</p>
             </div>
           </div>
@@ -79,7 +79,7 @@
               <i class="fas fa-heartbeat"></i> Recuperados
             </div>
             <div class="card-body">
-              <h5 class="card-title">Todos</h5>
+              <h5 class="card-title">Total</h5>
               <p id="m-es" class="card-text">{{seleccion.recuperados}}</p>
             </div>
           </div>
